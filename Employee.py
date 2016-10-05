@@ -1,8 +1,8 @@
-from abc import ABCMeta, abstractmethod
+from abc import ABCMeta, abstractmethod #Import
 
-class Employee(metaclass=ABCMeta):
+class Employee(metaclass=ABCMeta): #Newstlye class definition
 
-	@abstractmethod
+	@abstractmethod # Methods that need to be implemented for child classes
 	def employee_name(self, name):
 		pass
 

@@ -1,22 +1,22 @@
-from Employee import Employee
+'''
+Author: Stephen Lester
+'''
+
+
+from Employee import Employee #Imports 
 from HourlyEmployee import HourlyEmployee
 from SalariedEmployee import SalariedEmployee
 from Manager import Manager
 from Executive import Executive
-from Tree import TreeNode, BinarySearchTree
 
-class Company(object):
+class Company(object): #Newstyle class defintion
 
-	tree = 0 # 0 for standard array, 1 for binary search tree
 
-	def __init__(self, name):
+	def __init__(self, name): #Constructor
 		self.name = name
-		if self.tree == 0:
-			self.employees = []
-		else:
-			self.tree = BinarySearchTree()
+		self.employees = []
 
-	def hire(self, name, hours, salary, kind):
+	def hire(self, name, hours, salary, kind): #Hire method for adding employees
 		if kind == 0:
 			new_employee = HourlyEmployee(name, hours, salary)
 		elif kind == 1:
@@ -28,12 +28,9 @@ class Company(object):
 		else:
 			print("ERROR: INVALID INPUT")
 			return
-		if self.tree == 0:
-			self.employees.append(new_employee)
-		else:
-			self.tree.put(new_employee, 0)
+		self.employees.append(new_employee)
 	
-	def get_employees(self):
+	def get_employees(self): #Returning employees
 		for element in self.employees:
 			kind = element.__class__.__name__
 			if kind == 'HourlyEmployee':
@@ -47,7 +44,7 @@ class Company(object):
 				end = '/yr'
 			print(element.name, "-", kind, "- salary: $", element.salary, end)
 
-	def fire_employee(self, name):
+	def fire_employee(self, name): #Removing employees
 		counter = 0
 		for element in self.employees:
 			to_fire = element.name
@@ -58,14 +55,11 @@ class Company(object):
 			counter += 1
 		print("Employee not found")
 				
-	def raise_employee(self, name):
+	def raise_employee(self, name): #Pay raise for employees
 		for element in self.employees:
 			if element.name == name:
 				increase = int(input("Enter raise amount: "))
 				element.set_salary(element.amount + increase)
 				return
 		print("Employee not found")
-		
-#def tree_fire(self, name):
-		
 

@@ -1,11 +1,11 @@
-import abc
+import abc  #Imports
 from Employee import Employee
 
-class SalariedEmployee(Employee):
+class SalariedEmployee(Employee): #Newstyle class definition
 
-	weeks = 52
+	weeks = 52 #Constant
 
-	def __init__(self, name, hours, salary):
+	def __init__(self, name, hours, salary): #Constructor
 		self.name = name
 		self.hours = hours
 		self.amount = salary

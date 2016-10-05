@@ -1,9 +1,9 @@
-import abc
+import abc #Imports
 from Employee import Employee
 
-class HourlyEmployee(Employee):
+class HourlyEmployee(Employee): #Newstyle class definition
 
-	def __init__(self, name, hours, salary):
+	def __init__(self, name, hours, salary): #Constructor
 		self.name = name
 		self.hours = hours
 		self.amount  = salary

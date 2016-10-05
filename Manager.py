@@ -1,13 +1,11 @@
-import abc
+import abc #Imports
 from Employee import Employee
 
-class Manager(Employee):
+class Manager(Employee): #Newstyle class definition
 
-	paytype = 0	 # 0 for hourly, 1 for salaried, starts off set to hourly
-	weeks = 52
-	hours = 0
+	weeks = 52 #Constant
 
-	def __init__(self, name, hours, salary):
+	def __init__(self, name, hours, salary): #Constructor
 		self.name = name
 		self.hours = hours
 		self.amount = salary
